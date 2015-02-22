@@ -25,12 +25,12 @@ Filtering the data for the desired columns
 ------------------------------------------
 The columns were filtered for only represented the mean and standard deviation for each measurement
   * Retrieved all of the column names that included the term "mean()" and "std()";
-  * Subsetted our data set with only those columns;
+  * Subsetted the data set with only those columns;
   * Subsetted the data set again to eliminate columns that included the term "meanFreq".
 
 Using descriptive activity names
 --------------------------------
-We replaced each item in the Activity column with its verbal meaning from the file "activity_labels.txt" in the provided data set.
+I replaced each item in the Activity column with its verbal meaning from the file "activity_labels.txt" in the provided data set.
 
 Calculating the mean of each measurement by Activity, by Subject
 ----------------------------------------------------------------
@@ -41,7 +41,7 @@ The means of each measurement were calculated by the following steps:
 
 Feature Selection 
 -----------------
-From the group who performed the study we provide the following description of their data (note we have altered the actual variable names to be more human-readable):
+From the group who performed the study I provide the following description of their data (note I have altered the actual variable names to be more human-readable):
 
 
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
