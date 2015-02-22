@@ -66,12 +66,17 @@ tBodyGyroJerkMean
 
 The complete list of variables of each feature vector is available in 'features.txt'
 
-|  Variable Name                                                | Column# |  Variable Type   |  Value Range      |
-----------------------------------------------------------------|---------|------------------|-------------------|
-|  Subject                                                      |  1      |  numeric         |  1:30             |
-|  Activity                                                     |  2      |  string          |  AMEND ME!        |
-|  Time_BodyAccelerometer_Mean_X                                |  3      |  numeric         |  0.2216:0.3015    |
-|  Time_BodyAccelerometer_Mean_Y                                |  4      |  numeric         |  -0.0405:-0.0013  |
+|  Variable Name                                                | Column# |  Variable Type   |  Value Range        |  Description                                  |
+----------------------------------------------------------------|---------|------------------|-------------------  |-----------------------------------------------|
+|  Subject                                                      |  1      |  numeric         |  1:30               |  Subject measured in this observation         |
+|  Activity                                                     |  2      |  factor; string  |  laying                               
+                                                                                                sitting
+                                                                                                standing
+                                                                                                walking
+                                                                                                walking_upstairs
+                                                                                                walking_downstairs |  Activity being performed in this observation |
+|  Time_BodyAccelerometer_Mean_X                                |  3      |  numeric         |  0.2216:0.3015      |
+|  Time_BodyAccelerometer_Mean_Y                                |  4      |  numeric         |  -0.0405:-0.0013    |
 |  Time_BodyAccelerometer_Mean_Z                                |  5      |  numeric         |  -0.1525:-0.0754  |
 |  Time_GravityAccelerometer_Mean_X                             |  6      |  numeric         |  -0.68:0.9745     |
 |  Time_GravityAccelerometer_Mean_Y                             |  7      |  numeric         |  -0.4799:0.9566   |
