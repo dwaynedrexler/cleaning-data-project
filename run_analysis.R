@@ -52,7 +52,7 @@ for (i in 1:nrow(data)) { activities[i] <- activitiesList[data$Activity[i]] }
 data$Activity  <- activities
 
 ## ----- STEP 4. Appropriately labels the x data set with descriptive variable names -----
-# ADD COMMENT HERE EXPLAINING THIS
+# Create a named vector where the names are the items you want to search for and the values are the items you want to replace them with
 colReplace      <- c("Acc"      = "Accelerometer",
                      "Gyro"     = "Gyroscope",
                      "Mag"      = "Magnitude",
@@ -64,7 +64,8 @@ colReplace      <- c("Acc"      = "Accelerometer",
                      "-"        = "_",
                      "\\(\\)"   = "")
 
-newNames        <- names(data) 
+newNames        <- names(data)
+# Use gsub to substitute each item in the names(colReplace) with the value of that name - this creates human readable names for each of the columns
 for (i in 1:length(colReplace)) { newNames <- gsub(names(colReplace)[i], colReplace[i], newNames) }
 names(data)     <- newNames
 

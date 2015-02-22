@@ -17,16 +17,16 @@ I calculated the average of each variable for each activity and each subject. So
 Combining the data
 ------------------
 All of the data were combined into a single dataset with the following steps:
-1. Combined (row-wise) the training and test data for each of the three data files (subject, X, and y)
-2. Combined (column-wise) each of the data sets
-3. Named the columns using the information in features.txt, provided in the raw data
+  * Combined (row-wise) the training and test data for each of the three data files (subject, X, and y)
+  * Combined (column-wise) each of the data sets
+  * Named the columns using the information in features.txt, provided in the raw data
 
 Filtering the data for the desired columns
 ------------------------------------------
 The columns were filtered for only represented the mean and standard deviation for each measurement
-1. Retrieved all of the column names that included the term "mean()" and "std()";
-2. Subsetted our data set with only those columns;
-3. Subsetted the data set again to eliminate columns that included the term "meanFreq".
+  * Retrieved all of the column names that included the term "mean()" and "std()";
+  * Subsetted our data set with only those columns;
+  *Subsetted the data set again to eliminate columns that included the term "meanFreq".
 
 Using descriptive activity names
 --------------------------------
@@ -35,8 +35,8 @@ We replaced each item in the Activity column with its verbal meaning from the fi
 Calculating the mean of each measurement by Activity, by Subject
 ----------------------------------------------------------------
 The means of each measurement were calculated by the following steps:
-1. Split the data into sets filtered by Subject;
-2. Used the plyr library to summarize the means of each of the measurement fields grouped by Activity
+  * Split the data into sets filtered by Subject;
+  * Used the plyr library to summarize the means of each of the measurement fields grouped by Activity
 
 
 Feature Selection 
