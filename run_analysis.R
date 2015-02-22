@@ -37,10 +37,11 @@ yData           <- rbind(yTrain, yTest)
 data            <- cbind(subjectData, yData, xData)
 
 ## ----- STEP 2. "Extracts only the measurements on the mean and standard deviation for each measurement." -----
-# Create two vectors which contain only column numbers that contain "mean()" and "std()" - and then filter the data frame for only those columns
+# Create two vectors which contain only column numbers that contain "mean()" and "std()" - and then filter the data frame for only those columns.  Further filter out columns with meanFreq.
 meanCols        <- grep("mean()", names(data))
 stdevCols       <- grep("std()", names(data))
 data            <- data[, c(1, 2, meanCols, stdevCols)]
+data            <- data[, -grep("meanFreq", names(data))]
 
 ## ----- STEP 3. "Uses descriptive activity names to name the activities in the data set." -----
 activitiesList  <- c("walking", "walking_upstairs", "walking_downstairs", "sitting", "standing", "laying")
@@ -81,30 +82,3 @@ for (i in 1:length(final)) { result <- rbind(result, final[[i]]) }
 # Format the result and then write the text file
 formattedResult <- format(result, digits = 4, scientific = F, justify = 'right')
 write.table(formattedResult, file = "data.txt", row.names = FALSE, sep = '\t', col.names = TRUE, quote = FALSE)
-
-## ----- CREATE THE CODEBOOK MARKDOWN FILE ------
-printMDLine <- function(r) {
-        nameLength           <- 60
-        numberLength         <- 6
-        typeLength           <- 15
-        valuesLength         <- 16
-
-        nameField <- paste(r["names"], paste(rep(" ", nameLength - nchar(r["names"])), sep = "", collapse = ""), sep = "")
-        numberField <- paste(r["colNums"], paste(rep(" ", numberLength - nchar(r["colNums"])), sep = "", collapse = ""), sep = "")
-        typeField <- paste(r["types"], paste(rep(" ", typeLength - nchar(r["types"])), sep = "", collapse = ""), sep = "")
-        valuesField <- paste(r["ranges"], paste(rep(" ", valuesLength - nchar(r["ranges"])), sep = "", collapse = ""), sep = "")
-        
-        paste("| ", nameField, "| ", numberField, "| ", typeField, "| ", valuesField, "|")
-}
-
-valueRanges <- lapply(names(result)[3:length(result)], FUN = function(x) { range(result[, x]) })
-valueRanges <- unlist(lapply(valueRanges, FUN = function(x) { paste(round(x[1], digits = 4), ":", round(x[2], digits = 4), sep = "", collapse = "")}))
-
-codeBook <- data.frame(names = names(result),
-                       colNums = as.character(1:length(names(result))),
-                       types = c("numeric", "factor", rep("numeric", 79)),
-                       ranges = c("1:30",
-                                  "AMEND ME!",
-                                  valueRanges))
-
-codeBookLines <- apply(codeBook, MAR = 1, FUN = printMDLine)
