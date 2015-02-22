@@ -12,21 +12,21 @@ The purpose of this study was to combine all of the data from the [Human Activit
 
 I chose the wide-form format to construct the tidy data set.
 
-I calculated the average of each variable for each activity and each subject. So for Subject 1, the average of each variable whilst performing each activity was tabulated.
+**Averages were calculated on each measurement for each Subject performing each activity.**  The resulting data set is 180 rows x 68 columns.
 
 Combining the data
 ------------------
 All of the data were combined into a single dataset with the following steps:
-  * Combined (row-wise) the training and test data for each of the three data files (subject, X, and y)
-  * Combined (column-wise) each of the data sets
-  * Named the columns using the information in features.txt, provided in the raw data
+  * Combined (row-wise) the training and test data for each of the three data files (subject, X, and y);
+  * Combined (column-wise) each of the data sets;
+  * Named the columns using the information in features.txt, provided in the raw data.
 
 Filtering the data for the desired columns
 ------------------------------------------
 The columns were filtered for only represented the mean and standard deviation for each measurement
   * Retrieved all of the column names that included the term "mean()" and "std()";
   * Subsetted our data set with only those columns;
-  *Subsetted the data set again to eliminate columns that included the term "meanFreq".
+  * Subsetted the data set again to eliminate columns that included the term "meanFreq".
 
 Using descriptive activity names
 --------------------------------
@@ -36,7 +36,7 @@ Calculating the mean of each measurement by Activity, by Subject
 ----------------------------------------------------------------
 The means of each measurement were calculated by the following steps:
   * Split the data into sets filtered by Subject;
-  * Used the plyr library to summarize the means of each of the measurement fields grouped by Activity
+  * Used the plyr library to summarize the means of each of the measurement fields grouped by Activity.
 
 
 Feature Selection 
