@@ -3,7 +3,9 @@ ReadMe
 
 This project was completed in Getting and Cleaning Data course, which is part of the Data Science Specialization track.
 
-The main ending object is **formattedResult**, which is a data frame with the figures formatted.
+**The text file uploaded with the table of data is tab-delimited, 180 rows by 68 columns.**
+
+The main ending R object is **formattedResult**, which is a data frame with the figures formatted.
 
 The instructions to follow were:
 
