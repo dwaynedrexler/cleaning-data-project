@@ -6,6 +6,7 @@ This project was completed in Getting and Cleaning Data course, which is part of
 The main ending object is **formattedResult**, which is a data frame with the figures formatted.
 
 The instructions to follow were:
+
 You should create one R script called run_analysis.R that does the following. 
   * Merges the training and the test sets to create one data set.
   * Extracts only the measurements on the mean and standard deviation for each measurement. 
@@ -16,6 +17,7 @@ You should create one R script called run_analysis.R that does the following.
 I have provided liberal code comments to allow the reviewer to understand what each piece of code is doing.  Here is further explanation of the logical steps the code follows:
 
 The following provides a brief outline of the steps taken to achieve each of the assignment tasks:
+
 **Merges the training and test sets to create one data set.**
   * Combined, using _rbind()_, the training and test data for each of the three data files (subject, X, and y);
   * Combined, using _cbind()_, each of the data sets from step 1 above;
