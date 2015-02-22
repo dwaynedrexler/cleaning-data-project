@@ -1,4 +1,4 @@
-Getting and Cleaning Data - Project Code Book
+Getting and Cleaning Data - Study Design and Project Code Book
 =============================================
 Author: Dwayne Drexler
 ----------------------
@@ -8,7 +8,7 @@ Project Submitted: February 22, 2015
 
 Study Design
 ============
-The purpose of this study was to combine all of the data from the Human Activity Recognition study (http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) into a single, tidy dataset and tabulate the means of each of the measurements that were mean and standard deviation measurements, on each subject and each activity.
+The purpose of this study was to combine all of the data from the [Human Activity Recognition study](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) into a single, tidy dataset and tabulate the means of each of the measurements that were mean and standard deviation measurements, on each subject and each activity.
 
 I chose the wide-form format to construct the tidy data set.
 
@@ -52,37 +52,34 @@ Finally a Fast Fourier Transform (FFT) was applied to some of these signals prod
 
 These signals were used to estimate variables of the feature vector for each pattern:  
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
-
-tBodyAcc-XYZ
-tGravityAcc-XYZ
-tBodyAccJerk-XYZ
-tBodyGyro-XYZ
-tBodyGyroJerk-XYZ
-tBodyAccMag
-tGravityAccMag
-tBodyAccJerkMag
-tBodyGyroMag
-tBodyGyroJerkMag
-fBodyAcc-XYZ
-fBodyAccJerk-XYZ
-fBodyGyro-XYZ
-fBodyAccMag
-fBodyAccJerkMag
-fBodyGyroMag
-fBodyGyroJerkMag
+  * tBodyAcc-XYZ
+  * tGravityAcc-XYZ
+  * tBodyAccJerk-XYZ
+  * tBodyGyro-XYZ
+  * tBodyGyroJerk-XYZ
+  * tBodyAccMag
+  * tGravityAccMag
+  * tBodyAccJerkMag
+  * tBodyGyroMag
+  * tBodyGyroJerkMag
+  * fBodyAcc-XYZ
+  * fBodyAccJerk-XYZ
+  * fBodyGyro-XYZ
+  * fBodyAccMag
+  * fBodyAccJerkMag
+  * fBodyGyroMag
+  * fBodyGyroJerkMag
 
 The set of variables that were estimated from these signals are (limited to the data contained in this study): 
-
-mean(): Mean value
-std(): Standard deviation
+  * mean(): Mean value
+  * std(): Standard deviation
 
 Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
-
-gravityMean
-tBodyAccMean
-tBodyAccJerkMean
-tBodyGyroMean
-tBodyGyroJerkMean
+  * gravityMean
+  * tBodyAccMean
+  * tBodyAccJerkMean
+  * tBodyGyroMean
+  * tBodyGyroJerkMean
 
 
 
