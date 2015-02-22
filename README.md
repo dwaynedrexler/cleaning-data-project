@@ -41,6 +41,7 @@ The following provides a brief outline of the steps taken to achieve each of the
   * Used _gsub()_ to search through the list of column names and replace abbreviations with fuller names and create a camelCase-ish look to the column names
 
 **From the data set in Step 4, create a second, independent tidy data set with the average of each variable for each subject and each activity.**
+
 NOTE: I tabulated the averages "by subject, by activity" - so a _nested group-by_ that calculates the average for [Subject1, Activity1], [Subject1, Activity2], [Subject1, Activity3], etc.  I could also interpret the instruction sentence to perform a simple average on just each subject and each activity individually [Subject1], [Subject2], .., [Activity1], [Activity2], etc.  The output for the analysis I performed had 180 rows.  The simple-case _group-by_ would have only contained 36 rows (30 for the subjects and 6 for the activities).
   * Split the data by Subject;
   * Passed the split data into _dplyr_ _group-by(Activity)_ to obtain the measurement averages by Subject, by Activity;
@@ -48,10 +49,3 @@ NOTE: I tabulated the averages "by subject, by activity" - so a _nested group-by
   * Iterated through each object and used _rbind()_ to combine all of the results into a single data frame;
   * Formatted the numbers to 4 decimal places;
   * The resulting table is 180 rows by 68 columns.
-
-
-Calculating the mean of each measurement by Activity, by Subject
-----------------------------------------------------------------
-The means of each measurement were calculated by the following steps:
-  * Split the data into sets filtered by Subject;
-  * Used the plyr library to summarize the means of each of the measurement fields grouped by Activity
